@@ -3,14 +3,14 @@
 function fungsi1(e){
     elemen = e.currentTarget;
     console.log(elemen)
-    var nama = "suci";
+    var nama = "Yuman";
     document.getElementById("nama").innerHTML = " " + nama;
     
 }
 
 function fungsi2(e){
     elemen = e.currentTarget;
-    var nama1 = "24650093";
+    var nama1 = "24650097";
     document.getElementById("nama").innerHTML = "  " + nama1;
 }
 
@@ -22,14 +22,14 @@ function hapus(){
 function fungsi3(e){
     elemen = e.currentTarget;
     console.log(elemen)
-    var nama = "Suci Ramadani";
+    var nama = "Yuman";
     document.getElementById("nama").innerHTML = "nama saya adalah " + nama;
     
 }
 
 function fungsi4(e){
     elemen = e.currentTarget;
-    let nama1 = "24650093";
+    let nama1 = "24650097";
     document.getElementById("nama2").innerHTML = "dengan NIM  " + nama1;
 }
 
@@ -41,9 +41,8 @@ function hapus(){
 
 function fungsi5(e){
     elemen = e.currentTarget;
-    elemen.style.bagroundcolor ="yellow";
     console.log(elemen)
-    let nama = "suci Ramadani";
+    let nama = "Yuman";
     document.getElementById("nama").innerHTML = "nama saya adalah " + nama;
     
 }
@@ -54,7 +53,7 @@ function hilang(){
 
 function fungsi6(e){
     elemen = e.currentTarget;
-    let nama1 = "24650093";
+    let nama1 = "24650097";
     document.getElementById("nama").innerHTML = "dengan NIM  " + nama1;
 }
 
