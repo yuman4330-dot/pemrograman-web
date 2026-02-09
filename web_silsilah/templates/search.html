@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Silsilah Keluarga</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: auto; background: #f8f9fa; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .blue-link { color: #007bff; font-weight: bold; cursor: pointer; border: none; background: none; text-decoration: underline; padding: 0; }
+        input { padding: 10px; width: 70%; border-radius: 5px; border: 1px solid #ddd; }
+        button.btn-search { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Pencarian Silsilah</h2>
+    <form method="post" id="formCari" style="text-align: center; margin-bottom: 30px;">
+        <input type="text" name="nama" id="inputNama" value="{{ keyword }}" placeholder="Ketik nama anggota...">
+        <button type="submit" class="btn-search">Cari</button>
+    </form>
+
+    {% for orang in hasil %}
+    <div class="card">
+        <h2 style="margin: 0;">{{ orang.nama }}</h2>
+        <p style="color: #666;"><i>{{ orang.urutan }}</i></p>
+        <hr>
+        <p><b>Orang Tua:</b><br>
+            Ayah: <button class="blue-link" onclick="gas('{{ orang.ayah }}')">{{ orang.ayah or '-' }}</button><br>
+            Ibu: <button class="blue-link" onclick="gas('{{ orang.ibu }}')">{{ orang.ibu or '-' }}</button>
+        </p>
+        <p><b>Anak:</b><br>
+            {% for a in orang.anak %}
+                <button class="blue-link" onclick="gas('{{ a }}')">{{ a }}</button>{{ ", " if not loop.last }}
+            {% else %}-{% endfor %}
+        </p>
+    </div>
+    {% endfor %}
+
+    <script>
+        function gas(nama) {
+            if (nama && nama !== '-') {
+                document.getElementById('inputNama').value = nama;
+                document.getElementById('formCari').submit();
+            }
+        }
+    </script>
+</body>
+</html>
