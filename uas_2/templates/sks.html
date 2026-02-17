@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input SKS</title>
+</head>
+<body>
+    <h2>Input SKS</h2>
+
+{% if tahap == "jumlah" %}
+<form method="post">
+  Jumlah Mata Kuliah:
+  <input type="number" name="jumlah" min="1" required>
+  <br><br>
+  <button type="submit">Lanjut</button>
+</form>
+
+{% elif tahap == "input" %}
+<form method="post">
+  SKS ke-{{ index }}:
+  <input type="number" name="sks" min="1" required>
+  <br><br>
+  <button type="submit">Simpan</button>
+</form>
+{% endif %}
+
+<br>
+<a href="/">⬅ Kembali ke Menu</a>

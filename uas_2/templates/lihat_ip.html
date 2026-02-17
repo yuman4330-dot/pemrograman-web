@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lihat IPS</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>HASIL IPS</h2>
+
+    <div class="hasil">
+        {% if ips is not none %}
+            <p>IPS Anda:</p>
+            <p style="font-size:28px;"><b>{{ ips }}</b></p>
+        {% else %}
+            <p class="kosong">Nilai masih kosong</p>
+        {% endif %}
+    </div>
+
+    <div class="back">
+        <a href="/">⬅ Kembali ke Menu</a>
+    </div>
+</div>
+
+</body>
+</html>

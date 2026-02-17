@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Mahasiswa</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>BIODATA MAHASISWA</h2>
+
+    <form method="post">
+        <label>Nama</label>
+        <input type="text" name="nama" required>
+
+        <label>NIM</label>
+        <input type="text" name="nim" required>
+
+
+        <br>
+        <button type="submit">Simpan Biodata</button>
+    </form>
+
+    <hr>
+
+    <h3 style="text-align: left">Biodata Tersimpan</h3>
+
+    <div class="hasil">
+        {% if biodata %}
+            <p><b>Nama</b> : {{ biodata.nama }}</p>
+            <p><b>NIM</b> : {{ biodata.nim }}</p>
+        {% else %}
+            <p><i>Biodata belum diinput</i></p>
+        {% endif %}
+    </div>
+
+    <div class="back">
+        <a href="/">Kembali</a>
+    </div>
+</div>
+
+</body>
+</html>

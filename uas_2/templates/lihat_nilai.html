@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Nilai</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>DAFTAR NILAI</h2>
+
+    {% if data %}
+    <table>
+        <tr>
+            <th>SKS</th>
+            <th>Nilai</th>
+            <th>Label</th>
+            <th>Bobot</th>
+        </tr>
+
+        {% for d in data %}
+        <tr>
+            <td>{{ d[0] }}</td>
+            <td>{{ d[1] }}</td>
+            <td>{{ d[2] }}</td>
+            <td>{{ d[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <div class="kosong">Nilai masih kosong</div>
+    {% endif %}
+
+    <div class="back">
+        <a href="/">⬅ Kembali ke Menu</a>
+    </div>
+</div>
+
+</body>
+</html>
